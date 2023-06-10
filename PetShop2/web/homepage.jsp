@@ -9,10 +9,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <link rel="icon" href="WebContent/image/logo.png" type="image/x-icon"/>
+        <title>Cgreed Petcare</title>
         <%@include file="WebContent/jsp/header.jsp" %>
+        
     </head>
     <body>
         <h1>Hello World!</h1>
     </body>
+    <%@include file="WebContent/jsp/footer.jsp" %>
 </html>
