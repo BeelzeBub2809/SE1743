@@ -309,6 +309,7 @@ background text
   transition: all 0.5s;
 }
 
+
 .cont_forms_active_login {
   z-index: 2;
 }
@@ -342,7 +343,7 @@ background text
   color: #757575;
 }
 
-.cont_form_login > input {
+/*.cont_form_login >input {
   padding: 15px 5px;
   margin-left: 10px;
   margin-top: 20px;
@@ -350,7 +351,7 @@ background text
   border: none;
   text-align: left;
   color: #757575;
-}
+}*/
 
 .cont_form_login > h2 {
   margin-top: 110px;
@@ -365,3 +366,4 @@ background text
   margin: 10px;
   margin-left: 30px;
 }
+
