@@ -9,10 +9,11 @@ import DAL.LoginSignupDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.annotation.WebServlet;
+import model.Account;
 
 /**
  *
@@ -32,9 +33,15 @@ public class LoginController extends HttpServlet {
     throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String username = request.getParameter("username_in");
-        String password = request.getParameter("pass_in");
+        String password = request.getParameter("pswd_in");
         LoginSignupDAO dao = new LoginSignupDAO();
-        
+        Account acc = dao.login(username, password);
+        if(acc == null){
+            request.setAttribute("mess", "Wrong username or password");
+            request.getRequestDispatcher("assets/jsp/Login.jsp").forward(request, response);
+        }else{
+            response.sendRedirect("index.html");
+        }
     } 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

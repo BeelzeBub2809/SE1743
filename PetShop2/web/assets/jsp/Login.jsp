@@ -8,114 +8,35 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Kitter-Login</title>
-        <link rel="stylesheet" href="../css/stylelogin.css"/>
+        <title>Slide Navbar</title>
+        <link rel="stylesheet" type="text/css" href="../css/stylelogin.css">
+        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+       
+        
     </head>
     <body>
-        <div class="cotn_principal">
-            <div class="cont_centrar">
+        <div class="main">  	
+            <input type="checkbox" id="chk" aria-hidden="true">
+            <div class="signup">
+                <form action="${pageContext.request.contextPath}/login" method="POST">
+                    <label for="chk" aria-hidden="true">Login</label>
+                    <p>${mess}</p>
+                    <input type="text" name="username_in" placeholder="Username" required="">
+                    <input type="password" name="pswd_in" placeholder="Password" required="">
+                    <button type="submit">Login</button>
+                </form>
+            </div>
 
-                <div class="cont_login">
-                    <div class="cont_info_log_sign_up">
-                        <div class="col_md_login">
-                            <div class="cont_ba_opcitiy">
-
-                                <h2>LOGIN</h2>  
-                                <p>Have account? Click this.</p> 
-                                <button class="btn_login" onclick="change_to_login()">LOGIN</button>
-                            </div>
-                        </div>
-                        <div class="col_md_sign_up">
-                            <div class="cont_ba_opcitiy">
-                                <h2>SIGN UP</h2>
-
-
-                                <p>Let's create account</p>
-
-                                <button class="btn_sign_up" onclick="change_to_sign_up()">SIGN UP</button>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="cont_back_info">
-                        <div class="cont_img_back_grey">
-                            <img src="https://images.unsplash.com/42/U7Fc1sy5SCUDIu4tlJY3_NY_by_PhilippHenzler_philmotion.de.jpg?ixlib=rb-0.3.5&q=50&fm=jpg&crop=entropy&s=7686972873678f32efaf2cd79671673d" alt="" />
-                        </div>
-
-                    </div>
-                    <div class="cont_forms" >
-                        <div class="cont_img_back_">
-                            <img src="https://images.unsplash.com/42/U7Fc1sy5SCUDIu4tlJY3_NY_by_PhilippHenzler_philmotion.de.jpg?ixlib=rb-0.3.5&q=50&fm=jpg&crop=entropy&s=7686972873678f32efaf2cd79671673d" alt="" />
-                        </div>
-                        <div   class="cont_form_login">
-                            <a href="#" onclick="hidden_login_and_sign_up()" ><i class="material-icons">&#xE5C4;</i></a>
-                            <h2>LOGIN</h2>
-                            <form action="login" method="POST">
-                                <input name ="username_in" type="text" placeholder="Username" style="padding: 15px 5px;
-                                       margin-left: 10px;
-                                       margin-top: 20px;
-                                       width: 260px;
-                                       border: none;
-                                       text-align: left;
-                                       color: #757575;"/>
-                                
-                                <input  name="pass_in" type="password" placeholder="Password" style="padding: 15px 5px;
-                                       margin-left: 10px;
-                                       margin-top: 20px;
-                                       width: 260px;
-                                       border: none;
-                                       text-align: left;
-                                       color: #757575;"/>
-                                <button type ="submit" class="btn_login" onclick="change_to_login()">LOGIN</button>
-                            </form>
-                        </div>
-
-                        <div action="signup" method="POST" class="cont_form_sign_up">
-                            <a href="#" onclick="hidden_login_and_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
-                            <h2>SIGN UP</h2>
-                            <form action="login" method="POST">
-                                <input name="email" type="text" placeholder="Email" style="padding: 15px 5px;
-                                       margin-left: 10px;
-                                       margin-top: 20px;
-                                       width: 260px;
-                                       border: none;
-                                       text-align: left;
-                                       color: #757575;"/>
-                                
-                                <input name="username_up" type="text" placeholder="Username" style="padding: 15px 5px;
-                                       margin-left: 10px;
-                                       margin-top: 20px;
-                                       width: 260px;
-                                       border: none;
-                                       text-align: left;
-                                       color: #757575;"/>
-                                
-                                <input name="pass" type="password" placeholder="Password" style="padding: 15px 5px;
-                                       margin-left: 10px;
-                                       margin-top: 20px;
-                                       width: 260px;
-                                       border: none;
-                                       text-align: left;
-                                       color: #757575;" />
-                                
-                                <input name="re-pass" type="password" placeholder="Confirm Password" style="padding: 15px 5px;
-                                       margin-left: 10px;
-                                       margin-top: 20px;
-                                       width: 260px;
-                                       border: none;
-                                       text-align: left;
-                                       color: #757575;"/>
-                                <button type="submit" class="btn_sign_up" onclick="change_to_sign_up()">SIGN UP</button>
-                            </form>
-                        </div>
-
-                    </div>
-
-                </div>
+            <div class="login">
+                <form action="signup" method="POST">
+                    <label for="chk" aria-hidden="true">Sign up</label>
+                    <input type="text" name="username" placeholder="User name" required="">
+                    <input type="email" name="email" placeholder="Email" required="">
+                    <input type="password" name="pswd" placeholder="Password" required="">
+                    <input type="password" name="re-pswd" placeholder="Re-enter password" required="">
+                    <button type="submit">Sign up</button>
+                </form>
             </div>
         </div>
-        <script src="../js/scriptlogin.js"></script>
     </body>
 </html>
